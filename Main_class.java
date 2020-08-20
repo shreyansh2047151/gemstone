@@ -2,7 +2,7 @@
 //2.Implement the concept of class,data members,member functions and access specifier.
 import java.util.*;
 //Class Main
-public class Main_class {
+public class Main{
 	static String gemstoneName="By Devai Gems";
 	//access specifier is public
 	//member function
