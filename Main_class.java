@@ -23,6 +23,7 @@ public class Main
 		  case 2:
 		      System.out.println("no gemstones available");
 		      break;
+		      
 		  case 3:
 		      Exit();
 		      break;
@@ -51,7 +52,7 @@ public static void add_gemstone()
 		    System.out.println("Enter the price of the gemstone "+list1.get(i));
 		    price=st1.nextInt();
 		
-			if(price==0)
+			if(price<=0)
 			{
 			    System.out.println("Price cannot be zero or less. Enter the price again");
 			    list.add(st1.nextInt());
@@ -91,7 +92,6 @@ public static void add_gemstone()
                     String ans_response=Exit_data.next();
                     String yes="yes";
                     String no="no";
-                
                    if(ans_response.equals(yes))
                     {
                     System.out.println("You are Exit");
