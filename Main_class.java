@@ -1,15 +1,24 @@
 //1.Implement the concept of control statement and array
 //2.Implement the concept of class,data members,member functions and access specifier.
+//1.Implement the concept of control statement and array
+//2.Implement the concept of class,data members,member functions and access specifier.
 import java.util.*;
 public class Main
 {
-    static String gemstoneName="By Devai Gems";
+    static String gemstoneName="Bob Gems";     //static variable
+	static {
+	    System.out.println("The store is owned and managed by Shreyansh Jain");     //static block
+	}
 	public static void main(String[] args) {
-
+        Main.changeCompany();    //calling static method
+        Main obj = new Main(1, "Peridot", 230);    //calling constructor
+        Main obj1 = new Main(2, "Amathys", 500, 50);      //calling constructor
+        obj.display();
+        obj1.display();
 		Scanner st=new Scanner(System.in);
 		System.out.println("Welcome to Gemstone Shop Managemnt System " + gemstoneName);
 		System.out.println("Please Select Menu");
-		System.out.println("1.Add Gemstone -press 1");
+		System.out.println("1.Add Gemstone -press 1"); 
 		System.out.println("2.View Gemstone -press 2");
 		System.out.println("3.Exit -press 3");
 		System.out.println("Enter Your Choice:");
@@ -31,6 +40,7 @@ public class Main
 		        
 		}
 	}
+	//Adding a Gemstone
 public static void add_gemstone()
 	{
 	    ArrayList<Integer> list=new ArrayList<Integer>();
@@ -84,7 +94,7 @@ public static void add_gemstone()
 	}
 		
 
-		
+	//for exit	
 	public static void Exit()
 {
     Scanner Exit_data=new Scanner(System.in);
@@ -108,5 +118,30 @@ public static void add_gemstone()
                         Exit();
                     }
 }
-    
+  static void changeCompany(){         //static method
+      gemstoneName= "Devai Gems";
+  }
+  int id,price,discount;
+  String name;
+  Main(int i, String n, int p)
+  {     //constructor overloading
+      id=i;
+      name=n;
+      price=p;
+  }
+  Main(int i, String n, int p, int d)
+  {    //constructor overloading
+      id=i;
+      name=n;
+      price=p;
+      discount=d;
+  }
+  void display()
+  {
+      System.out.println("id: "+id);
+      System.out.println("name "+name);
+      System.out.println("price "+price);
+      System.out.println("discount "+discount);
+  }
 }
+
