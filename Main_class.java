@@ -5,14 +5,19 @@
 import java.util.*;
 public class Main
 {
-    static String gemstoneName="Bob Gems";     //static variable
+	static String gemstoneName="Bob Gems";     //static variable
 	static {
 	    System.out.println("The store is owned and managed by Shreyansh Jain");     //static block
-	}
+		}
 	public static void main(String[] args) {
-        Main.changeCompany();    //calling static method
+
         Main obj = new Main(1, "Peridot", 230);    //calling constructor
-        Main obj1 = new Main(2, "Amathys", 500, 50);      //calling constructor
+        Main obj1 = new Main(2, "Amathys", 500, 50); //calling constructor
+
+	Main obj2 = new Main();			//Function Overloading
+	obj2.fover(3, "Smokey", 370);
+	obj2.fover(4, "Black Spinel", 740, 30);
+	
         obj.display();
         obj1.display();
 		Scanner st=new Scanner(System.in);
@@ -123,11 +128,11 @@ public static void add_gemstone()
   }
   int id,price,discount;
   String name;
-  Main(int i, String n, int p)
+  Main(int id, String name, int price)
   {     //constructor overloading
-      id=i;
-      name=n;
-      price=p;
+      this.id=id; //implementing this keyword
+      this.name=name; //implementing this keyword
+      this.price=price; //implementing this keyword
   }
   Main(int i, String n, int p, int d)
   {    //constructor overloading
@@ -136,6 +141,29 @@ public static void add_gemstone()
       price=p;
       discount=d;
   }
+
+  Main(){} //Default constructor
+
+  static void fover(int i, String n, int p)
+  {
+	System.out.println("");
+	System.out.println("id: "+i);
+    System.out.println("name "+n);
+    System.out.println("price "+p);
+	
+  }
+
+  static void fover(int i, String n, int p, int d)
+  {
+	System.out.println("\n");
+	System.out.println("id: "+i);
+  	System.out.println("name "+n);
+    System.out.println("price "+p);
+    System.out.println("discount "+d);
+	System.out.println("Function Overloading\n");
+  }
+
+
   void display()
   {
       System.out.println("id: "+id);
@@ -144,4 +172,3 @@ public static void add_gemstone()
       System.out.println("discount "+discount);
   }
 }
-
