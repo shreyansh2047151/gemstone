@@ -3,50 +3,9 @@
 //3.Implement the concept of function overloading and constructor overloading.
 //4.Implement the static keyword- static variable, static block, static function and static class.
 import java.util.*;
-public class Main
+class gem 
 {
-	static String gemstoneName="Bob Gems";     //static variable
-	static {
-	    System.out.println("The store is owned and managed by Shreyansh Jain");     //static block
-		}
-	public static void main(String[] args) {
-
-        Main obj = new Main(1, "Peridot", 230);    //calling constructor
-        Main obj1 = new Main(2, "Amathys", 500, 50); //calling constructor
-
-	Main obj2 = new Main();			//Function Overloading
-	obj2.fover(3, "Smokey", 370);
-	obj2.fover(4, "Black Spinel", 740, 30);
-	
-        obj.display();
-        obj1.display();
-		Scanner st=new Scanner(System.in);
-		System.out.println("Welcome to Gemstone Shop Managemnt System " + gemstoneName);
-		System.out.println("Please Select Menu");
-		System.out.println("1.Add Gemstone -press 1"); 
-		System.out.println("2.View Gemstone -press 2");
-		System.out.println("3.Exit -press 3");
-		System.out.println("Enter Your Choice:");
-		int ch=st.nextInt();
-		switch(ch)
-		{
-		    case 1:
-		        add_gemstone();
-		        break;
-		        
-		  case 2:
-		      System.out.println("no gemstones available");
-		      break;
-		      
-		  case 3:
-		      Exit();
-		      break;
-		      
-		        
-		}
-	}
-	//Adding a Gemstone
-public static void add_gemstone()
+ public static void add_gemstone()
 	{
 	    ArrayList<Integer> list=new ArrayList<Integer>();
 	    ArrayList<String> list1=new ArrayList<String>();
@@ -113,8 +72,8 @@ public static void add_gemstone()
                     }
                     else if(ans_response.equals(no))
                     {
-                  
-                    main(null);
+                        
+                  Exit();
                   
                     }
                     else
@@ -122,7 +81,55 @@ public static void add_gemstone()
                         System.out.println("Wrong Choice");
                         Exit();
                     }
+}   
 }
+public class Main extends gem
+{
+	static String gemstoneName="Bob Gems";     //static variable
+	static {
+	    System.out.println("The store is owned and managed by Shreyansh Jain");     //static block
+		}
+	public static void main(String[] args) {
+
+        Main obj = new Main(1, "Peridot", 230);    //calling constructor
+        Main obj1 = new Main(2, "Amathys", 500, 50); //calling constructor
+
+	Main obj2 = new Main();			//Function Overloading
+	obj2.fover(3, "Smokey", 370);
+	obj2.fover(4, "Black Spinel", 740, 30);
+	
+        obj.display();
+        obj1.display();
+        Main obj3=new Main();
+        obj3.add_gemstone();
+		Scanner st=new Scanner(System.in);
+		System.out.println("Welcome to Gemstone Shop Managemnt System " + gemstoneName);
+		System.out.println("Please Select Menu");
+		System.out.println("1.Add Gemstone -press 1"); 
+		System.out.println("2.View Gemstone -press 2");
+		System.out.println("3.Exit -press 3");
+		System.out.println("Enter Your Choice:");
+		int ch=st.nextInt();
+		switch(ch)
+		{
+		    case 1:
+		        add_gemstone();
+		        break;
+		        
+		  case 2:
+		      System.out.println("no gemstones available");
+		      break;
+		      
+		  case 3:
+		      Exit();
+		      break;
+		      
+		        
+		}
+	}
+	//Adding a Gemstone
+
+
   static void changeCompany(){         //static method
       gemstoneName= "Devai Gems";
   }
@@ -171,4 +178,6 @@ public static void add_gemstone()
       System.out.println("price "+price);
       System.out.println("discount "+discount);
   }
+  
 }
+
