@@ -73,8 +73,7 @@ class gem
                     else if(ans_response.equals(no))
                     {
                         
-                  Exit();
-                  
+                  add_gemstone();//Exit();
                     }
                     else
                     {
