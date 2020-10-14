@@ -59,7 +59,7 @@ class gem
 		
 
 	//for exit	
-	public static void Exit()
+	public void Exit()
 {
     Scanner Exit_data=new Scanner(System.in);
      System.out.println("Do you Want to Exit -- yes/no");
