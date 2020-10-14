@@ -28,7 +28,9 @@ class gem
 		
 			if(price<=0)
 			{
-			    System.out.println("Price cannot be zero or less. Enter the price again");
+			    StringBuffer pr=new StringBuffer("Price cannot be zero or less. Enter the price again");// use of StringBuffer
+			    pr.replace(16,20,"0");
+			    System.out.println(pr);
 			    list.add(st1.nextInt());
 			}
 			else
@@ -59,7 +61,7 @@ class gem
 		
 
 	//for exit	
-	public void Exit()
+	public static void Exit()
 {
     Scanner Exit_data=new Scanner(System.in);
      System.out.println("Do you Want to Exit -- yes/no");
@@ -73,7 +75,7 @@ class gem
                     else if(ans_response.equals(no))
                     {
                         
-                  add_gemstone();//Exit();
+                  add_gemstone();
                     }
                     else
                     {
@@ -89,6 +91,7 @@ public class Main extends gem
 	    System.out.println("The store is owned and managed by Shreyansh Jain");     //static block
 		}
 	public static void main(String[] args) {
+	    //System.out.println("Your first argument is: "+args[0]); // command line argument
 
         Main obj = new Main(1, "Peridot", 230);    //calling constructor
         Main obj1 = new Main(2, "Amathys", 500, 50); //calling constructor
