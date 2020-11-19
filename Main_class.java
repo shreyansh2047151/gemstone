@@ -70,7 +70,8 @@ class gem
                     String no="no";
                    if(ans_response.equals(yes))
                     {
-                    System.out.println("You are Exit");
+			final string exit="Thank you for shopping from Devai Gems"; //final keyword
+                        exit;
                     }
                     else if(ans_response.equals(no))
                     {
